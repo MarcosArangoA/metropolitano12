@@ -23,7 +23,7 @@ public class HistorialRecargas extends AppCompatActivity {
         setContentView(R.layout.activity_lista_recargas);
 
         recyclerView = findViewById(R.id.rvRecargas);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // importante
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         int idUsuario = getIntent().getIntExtra("id", -1);
 

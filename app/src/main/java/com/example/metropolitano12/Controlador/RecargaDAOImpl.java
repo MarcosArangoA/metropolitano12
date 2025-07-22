@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.metropolitano12.Modelo.Recarga;
 
@@ -27,11 +28,19 @@ public class RecargaDAOImpl implements RecargaDAO {
 
         long result = db.insert("RECARGAS", null, values);
         db.close();
-        return result != -1;
+
+        if (result != -1) {
+            Log.i("RecargaDAO", "Recarga registrada: IDUsuario=" + recarga.getIdUsuario() + ", Monto=" + recarga.getMonto());
+            return true;
+        } else {
+            Log.e("RecargaDAO", "Error al registrar recarga: IDUsuario=" + recarga.getIdUsuario());
+            return false;
+        }
     }
 
     @Override
     public List<Recarga> obtenerRecargasPorUsuario(int idUsuario) {
+        Log.d("RecargaDAO", "Obteniendo recargas para IDUsuario: " + idUsuario);
         List<Recarga> lista = new ArrayList<>();
         SQLiteDatabase db = bd.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM RECARGAS WHERE IDUSUARIO = ?", new String[]{String.valueOf(idUsuario)});
@@ -44,6 +53,7 @@ public class RecargaDAOImpl implements RecargaDAO {
             lista.add(r);
         }
 
+        Log.i("RecargaDAO", "Total recargas encontradas: " + lista.size());
         cursor.close();
         db.close();
         return lista;
