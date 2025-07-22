@@ -204,8 +204,26 @@
                         android:inputType="textPassword"
                         android:minWidth="320dp"
                         android:minHeight="48dp" />
+
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/etPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:hint="Tu pin"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:minWidth="320dp"
+                android:minHeight="48dp"
+                android:enabled="false"
+                />
+
 
             <Button
                 android:id="@+id/btnRegistrar"

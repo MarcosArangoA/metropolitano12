@@ -11,6 +11,7 @@ public class usuarios implements Serializable {
     private String tvContraseña;
     private String tvCorreo;
     private double tvSaldo;
+    private String tvPin;
 
     public usuarios(){
     }
@@ -81,4 +82,7 @@ public class usuarios implements Serializable {
         this.tvSaldo = tvSaldo;
     }
 
+    public String getTvPin() { return tvPin; }
+
+    public void   setTvPin(String tvPin) { this.tvPin = tvPin; }
 }

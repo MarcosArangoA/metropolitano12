@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
                     usuarios usuario = dao.buscarPorDni(dni);
                     int idUsuario = usuario.getIdUsuario();
 
-                    Intent intent = new Intent(MainActivity.this, menu.class);
-                    intent.putExtra("id", idUsuario); // Pasas el ID al menú
-                    startActivity(intent);
+                    Intent i = new Intent(MainActivity.this, PinVerificationActivity.class);
+                    i.putExtra("id", idUsuario);
+                    startActivity(i);
                     finish();
+
                 } else {
                     Toast.makeText(MainActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }

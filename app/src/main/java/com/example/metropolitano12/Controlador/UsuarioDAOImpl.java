@@ -30,6 +30,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
         values.put("CORREO", usuario.getTvCorreo());
         values.put("SALDO", usuario.getTvSaldo());
+        values.put("PIN", usuario.getTvPin());
 
         long resultado = db.insert("USUARIOS", null, values);
         db.close();
@@ -58,6 +59,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             u.setTvContraseña(cursor.getString(4));
             u.setTvCorreo(cursor.getString(5));
             u.setTvSaldo(cursor.getDouble(6));
+            u.setTvPin(cursor.getString(7));
+
 
             Log.i("UsuarioDAO", "Usuario encontrado: " + dni);
         } else {
@@ -83,6 +86,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             u.setTvContraseña(cursor.getString(4));
             u.setTvCorreo(cursor.getString(5));
             u.setTvSaldo(cursor.getDouble(6));
+            u.setTvPin(cursor.getString(7));
 
             Log.i("UsuarioDAO", "Usuario encontrado por ID: " + id);
         } else {

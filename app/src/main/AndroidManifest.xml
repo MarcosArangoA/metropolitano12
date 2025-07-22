@@ -27,6 +27,7 @@
         <activity
             android:name=".Vista.HistorialRecargas"
             android:exported="true" />
+        <activity android:name=".Vista.PinVerificationActivity"/>
         <activity
             android:name=".Vista.MainActivity"
             android:exported="true">
